@@ -1,0 +1,12 @@
+scrape_configs:
+  # 任意写，建议英文，不要包含特殊字符
+  - job_name: 'testpromet'
+    # 采集的间隔时间
+    scrape_interval: 15s
+    # 采集时的超时时间
+    scrape_timeout: 10s
+    # 采集路径
+    metrics_path: '/actuator/prometheus'
+    # 采集服务的地址，也就是我们应用的地址
+    static_configs:
+      - targets: ['172.21.26.39:8080']
